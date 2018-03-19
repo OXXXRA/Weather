@@ -15,11 +15,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   //import from storyboard
+    
+    @IBOutlet weak var WebView: UIWebView!
+    @IBOutlet weak var Form: UITextField!
+    @IBOutlet weak var Button_Find: UIButton!
+    
+    ///
+    @IBAction func Button_Find_tap(_ sender: Any) {
+        if (Form.text == "") {
+            return;
+        }
+        else{
+            let url = URL (string: " https://www.google.ru/search?q=\(Form.text!)")
+            let requestObj = URLRequest(url: url!)
+            WebView.loadRequest(requestObj)
+            
+            
+        
     }
 
-
+}
 }
 
